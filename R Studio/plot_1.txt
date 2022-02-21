@@ -1,0 +1,86 @@
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin17.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+[R.app GUI 1.77 (8007) x86_64-apple-darwin17.0]
+
+WARNING: You're using a non-UTF8 locale, therefore only ASCII characters will work.
+Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system preferences accordingly.
+[History restored from /Users/robertogarcia/.Rapp.history]
+
+> install.packages(pacman)
+Error in install.packages(pacman) : object 'pacman' not found
+Error in if (res > nrow(m)) { : argument is of length zero
+--- Please select a CRAN mirror for use in this session ---
+Error in if (res > nrow(m)) { : argument is of length zero
+> require(pacman)
+Loading required package: pacman
+Warning message:
+In library(package, lib.loc = lib.loc, character.only = TRUE, logical.return = TRUE,  :
+  there is no package called 'pacman'
+> install.packages("pacman")
+--- Please select a CRAN mirror for use in this session ---
+also installing the dependency 'remotes'
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/remotes_2.4.2.tgz'
+Content type 'application/octet-stream' length 395393 bytes (386 KB)
+==================================================
+downloaded 386 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/pacman_0.5.1.tgz'
+Content type 'application/octet-stream' length 380131 bytes (371 KB)
+==================================================
+downloaded 371 KB
+
+tar: Failed to set default locale
+tar: Failed to set default locale
+
+The downloaded binary packages are in
+	/var/folders/st/wcc6sy851d55t40cby3rjldm0000gn/T//RtmpknYH4w/downloaded_packages
+> require(pacman)
+Loading required package: pacman
+> library(pacman)
+> head(iris)
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
+> ?plot
+starting httpd help server ... done
+> plot(iris$Species)
+> plot(iris$Petal.Length)
+> plot(iris$Species, iris$Petal.Width)
+> plot(iris$Petal.Length, iris$Petal.Width)
+> plot(iris)
+> plot(iris)
+> #Ejercicio 2
+> plot(iris$Petal.Length, iris$Petal.Width, col= "#cc0000", pch=19, main= "Iris: Petal Length vs Petal Width", xlab= "Petal Length", ylab="Petal Width")
+> plot(cos,0,2*pi)
+> plot(exp, 1, 5)
+> plot(dnorm, -3, +3)
+> plot(dnorm, -3, +3, col= "#cc0000", lwd=5, main= "Standard Normal Distribution", xlab= "z-scores", ylab= "Density")
+> 

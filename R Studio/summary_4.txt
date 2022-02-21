@@ -1,0 +1,554 @@
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin17.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+[R.app GUI 1.77 (8007) x86_64-apple-darwin17.0]
+
+WARNING: You're using a non-UTF8 locale, therefore only ASCII characters will work.
+Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system preferences accordingly.
+[Workspace restored from /Users/robertogarcia/.RData]
+[History restored from /Users/robertogarcia/.Rapp.history]
+
+> library(datasets)
+> ?lynx
+starting httpd help server ... done
+> head(lynx)
+[1]  269  321  585  871 1475 2821
+> hist(lynx)
+> hist(lynx, breaks=14, freq= FALSE, col= "thistle1", main= paste("Histogram of Annual Canadian Lynx", "Trappings, 1821-1934"), xlab= "Number of Lynx Trapped")
+> curve(dnorm(x,mean= mean(lynx), sd= sd(lynx))), col= "thistle4", lwd= 2, add= TRUE)
+Error: unexpected ',' in "curve(dnorm(x,mean= mean(lynx), sd= sd(lynx))),"
+> curve(dnorm(x,mean= mean(lynx), sd= sd(lynx)), col= "thistle4", lwd= 2, add= TRUE)
+Warning message:
+In curve(dnorm(x, mean = mean(lynx), sd = sd(lynx)), col = "thistle4",  :
+  'add' will be ignored as there is no existing plot
+> #Ejercicio 2
+> head(iris)
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
+> summary(iris$Species)
+    setosa versicolor  virginica 
+        50         50         50 
+> summary(iris$Sepal.Length)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  4.300   5.100   5.800   5.843   6.400   7.900 
+> summary(iris)
+  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+ Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+ 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+ Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+ Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+ 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+ Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+       Species  
+ setosa    :50  
+ versicolor:50  
+ virginica :50  
+                
+                
+                
+> #Ejercicio 3
+> p_load(psych)
+Error in p_load(psych) : could not find function "p_load"
+> p_nelp(psych)
+Error in p_nelp(psych) : could not find function "p_nelp"
+also installing the dependencies 'BiocManager', 'XML'
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/BiocManager_1.30.16.tgz'
+Content type 'application/octet-stream' length 322920 bytes (315 KB)
+==================================================
+downloaded 315 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/XML_3.99-0.8.tgz'
+Content type 'application/octet-stream' length 3742478 bytes (3.6 MB)
+==================================================
+downloaded 3.6 MB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/pacman_0.5.1.tgz'
+Content type 'application/octet-stream' length 380131 bytes (371 KB)
+==================================================
+downloaded 371 KB
+
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+
+The downloaded binary packages are in
+	/var/folders/st/wcc6sy851d55t40cby3rjldm0000gn/T//Rtmp10FYkY/downloaded_packages
+> p_load(psych)
+Error in p_load(psych) : could not find function "p_load"
+> pacman::p_load(pacman, dplyr, GGally, ggplot2, ggthemes, ggvis, httr, lubridate, plotly, rio, rmarkdown, shiny, stringr, tidyr)
+also installing the dependencies 'purrr', 'generics', 'tidyselect'
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/purrr_0.3.4.tgz'
+Content type 'application/octet-stream' length 417295 bytes (407 KB)
+==================================================
+downloaded 407 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/generics_0.1.2.tgz'
+Content type 'application/octet-stream' length 77002 bytes (75 KB)
+==================================================
+downloaded 75 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/tidyselect_1.1.1.tgz'
+Content type 'application/octet-stream' length 198270 bytes (193 KB)
+==================================================
+downloaded 193 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/dplyr_1.0.8.tgz'
+Content type 'application/octet-stream' length 1295740 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+
+The downloaded binary packages are in
+	/var/folders/st/wcc6sy851d55t40cby3rjldm0000gn/T//Rtmp10FYkY/downloaded_packages
+
+dplyr installed
+also installing the dependencies 'Rcpp', 'hms', 'prettyunits', 'cpp11', 'forcats', 'plyr', 'progress', 'RColorBrewer', 'reshape', 'tidyr'
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/Rcpp_1.0.8.tgz'
+Content type 'application/octet-stream' length 3281159 bytes (3.1 MB)
+==================================================
+downloaded 3.1 MB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/hms_1.1.1.tgz'
+Content type 'application/octet-stream' length 98015 bytes (95 KB)
+==================================================
+downloaded 95 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/prettyunits_1.1.1.tgz'
+Content type 'application/octet-stream' length 34694 bytes (33 KB)
+==================================================
+downloaded 33 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/cpp11_0.4.2.tgz'
+Content type 'application/octet-stream' length 304435 bytes (297 KB)
+==================================================
+downloaded 297 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/forcats_0.5.1.tgz'
+Content type 'application/octet-stream' length 354324 bytes (346 KB)
+==================================================
+downloaded 346 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/plyr_1.8.6.tgz'
+Content type 'application/octet-stream' length 1015776 bytes (991 KB)
+==================================================
+downloaded 991 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/progress_1.2.2.tgz'
+Content type 'application/octet-stream' length 83429 bytes (81 KB)
+==================================================
+downloaded 81 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/RColorBrewer_1.1-2.tgz'
+Content type 'application/octet-stream' length 52954 bytes (51 KB)
+==================================================
+downloaded 51 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/reshape_0.8.8.tgz'
+Content type 'application/octet-stream' length 167909 bytes (163 KB)
+==================================================
+downloaded 163 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/tidyr_1.2.0.tgz'
+Content type 'application/octet-stream' length 1001606 bytes (978 KB)
+==================================================
+downloaded 978 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/GGally_2.1.2.tgz'
+Content type 'application/octet-stream' length 1636720 bytes (1.6 MB)
+==================================================
+downloaded 1.6 MB
+
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+
+The downloaded binary packages are in
+	/var/folders/st/wcc6sy851d55t40cby3rjldm0000gn/T//Rtmp10FYkY/downloaded_packages
+
+GGally installed
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/ggthemes_4.2.4.tgz'
+Content type 'application/octet-stream' length 436158 bytes (425 KB)
+==================================================
+downloaded 425 KB
+
+tar: Failed to set default locale
+
+The downloaded binary packages are in
+	/var/folders/st/wcc6sy851d55t40cby3rjldm0000gn/T//Rtmp10FYkY/downloaded_packages
+
+ggthemes installed
+also installing the dependencies 'fs', 'rappdirs', 'sass', 'httpuv', 'mime', 'xtable', 'fontawesome', 'sourcetools', 'later', 'promises', 'commonmark', 'bslib', 'cachem', 'assertthat', 'shiny'
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/fs_1.5.2.tgz'
+Content type 'application/octet-stream' length 545943 bytes (533 KB)
+==================================================
+downloaded 533 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/rappdirs_0.3.3.tgz'
+Content type 'application/octet-stream' length 45542 bytes (44 KB)
+==================================================
+downloaded 44 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/sass_0.4.0.tgz'
+Content type 'application/octet-stream' length 2388256 bytes (2.3 MB)
+==================================================
+downloaded 2.3 MB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/httpuv_1.6.5.tgz'
+Content type 'application/octet-stream' length 2746719 bytes (2.6 MB)
+==================================================
+downloaded 2.6 MB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/mime_0.12.tgz'
+Content type 'application/octet-stream' length 34812 bytes (33 KB)
+==================================================
+downloaded 33 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/xtable_1.8-4.tgz'
+Content type 'application/octet-stream' length 701448 bytes (685 KB)
+==================================================
+downloaded 685 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/fontawesome_0.2.2.tgz'
+Content type 'application/octet-stream' length 1530165 bytes (1.5 MB)
+==================================================
+downloaded 1.5 MB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/sourcetools_0.1.7.tgz'
+Content type 'application/octet-stream' length 138851 bytes (135 KB)
+==================================================
+downloaded 135 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/later_1.3.0.tgz'
+Content type 'application/octet-stream' length 623693 bytes (609 KB)
+==================================================
+downloaded 609 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/promises_1.2.0.1.tgz'
+Content type 'application/octet-stream' length 1782018 bytes (1.7 MB)
+==================================================
+downloaded 1.7 MB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/commonmark_1.7.tgz'
+Content type 'application/octet-stream' length 310444 bytes (303 KB)
+==================================================
+downloaded 303 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/bslib_0.3.1.tgz'
+Content type 'application/octet-stream' length 4780706 bytes (4.6 MB)
+==================================================
+downloaded 4.6 MB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/cachem_1.0.6.tgz'
+Content type 'application/octet-stream' length 66261 bytes (64 KB)
+==================================================
+downloaded 64 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/assertthat_0.2.1.tgz'
+Content type 'application/octet-stream' length 52388 bytes (51 KB)
+==================================================
+downloaded 51 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/shiny_1.7.1.tgz'
+Content type 'application/octet-stream' length 4174652 bytes (4.0 MB)
+==================================================
+downloaded 4.0 MB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/ggvis_0.4.7.tgz'
+Content type 'application/octet-stream' length 1131836 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+
+The downloaded binary packages are in
+	/var/folders/st/wcc6sy851d55t40cby3rjldm0000gn/T//Rtmp10FYkY/downloaded_packages
+
+ggvis installed
+also installing the dependencies 'sys', 'askpass', 'curl', 'openssl'
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/sys_3.4.tgz'
+Content type 'application/octet-stream' length 47336 bytes (46 KB)
+==================================================
+downloaded 46 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/askpass_1.1.tgz'
+Content type 'application/octet-stream' length 21566 bytes (21 KB)
+==================================================
+downloaded 21 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/curl_4.3.2.tgz'
+Content type 'application/octet-stream' length 862270 bytes (842 KB)
+==================================================
+downloaded 842 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/openssl_1.4.6.tgz'
+Content type 'application/octet-stream' length 2860431 bytes (2.7 MB)
+==================================================
+downloaded 2.7 MB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/httr_1.4.2.tgz'
+Content type 'application/octet-stream' length 503034 bytes (491 KB)
+==================================================
+downloaded 491 KB
+
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+
+The downloaded binary packages are in
+	/var/folders/st/wcc6sy851d55t40cby3rjldm0000gn/T//Rtmp10FYkY/downloaded_packages
+
+httr installed
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/lubridate_1.8.0.tgz'
+Content type 'application/octet-stream' length 1479851 bytes (1.4 MB)
+==================================================
+downloaded 1.4 MB
+
+tar: Failed to set default locale
+
+The downloaded binary packages are in
+	/var/folders/st/wcc6sy851d55t40cby3rjldm0000gn/T//Rtmp10FYkY/downloaded_packages
+
+lubridate installed
+also installing the dependencies 'viridisLite', 'htmlwidgets', 'lazyeval', 'crosstalk', 'data.table'
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/viridisLite_0.4.0.tgz'
+Content type 'application/octet-stream' length 1296462 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/htmlwidgets_1.5.4.tgz'
+Content type 'application/octet-stream' length 894885 bytes (873 KB)
+==================================================
+downloaded 873 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/lazyeval_0.2.2.tgz'
+Content type 'application/octet-stream' length 156515 bytes (152 KB)
+==================================================
+downloaded 152 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/crosstalk_1.2.0.tgz'
+Content type 'application/octet-stream' length 406034 bytes (396 KB)
+==================================================
+downloaded 396 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/data.table_1.14.2.tgz'
+Content type 'application/octet-stream' length 2336276 bytes (2.2 MB)
+==================================================
+downloaded 2.2 MB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/plotly_4.10.0.tgz'
+Content type 'application/octet-stream' length 3115123 bytes (3.0 MB)
+==================================================
+downloaded 3.0 MB
+
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+
+The downloaded binary packages are in
+	/var/folders/st/wcc6sy851d55t40cby3rjldm0000gn/T//Rtmp10FYkY/downloaded_packages
+
+plotly installed
+also installing the dependencies 'bit', 'bit64', 'clipr', 'vroom', 'tzdb', 'rematch', 'readr', 'cellranger', 'zip', 'haven', 'readxl', 'openxlsx'
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/bit_4.0.4.tgz'
+Content type 'application/octet-stream' length 688274 bytes (672 KB)
+==================================================
+downloaded 672 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/bit64_4.0.5.tgz'
+Content type 'application/octet-stream' length 576409 bytes (562 KB)
+==================================================
+downloaded 562 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/clipr_0.7.1.tgz'
+Content type 'application/octet-stream' length 48702 bytes (47 KB)
+==================================================
+downloaded 47 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/vroom_1.5.7.tgz'
+Content type 'application/octet-stream' length 2728227 bytes (2.6 MB)
+==================================================
+downloaded 2.6 MB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/tzdb_0.2.0.tgz'
+Content type 'application/octet-stream' length 1235823 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/rematch_1.0.1.tgz'
+Content type 'application/octet-stream' length 12231 bytes (11 KB)
+==================================================
+downloaded 11 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/readr_2.1.2.tgz'
+Content type 'application/octet-stream' length 1873543 bytes (1.8 MB)
+==================================================
+downloaded 1.8 MB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/cellranger_1.1.0.tgz'
+Content type 'application/octet-stream' length 101458 bytes (99 KB)
+==================================================
+downloaded 99 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/zip_2.2.0.tgz'
+Content type 'application/octet-stream' length 212821 bytes (207 KB)
+==================================================
+downloaded 207 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/haven_2.4.3.tgz'
+Content type 'application/octet-stream' length 970339 bytes (947 KB)
+==================================================
+downloaded 947 KB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/readxl_1.3.1.tgz'
+Content type 'application/octet-stream' length 1678740 bytes (1.6 MB)
+==================================================
+downloaded 1.6 MB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/openxlsx_4.2.5.tgz'
+Content type 'application/octet-stream' length 3190969 bytes (3.0 MB)
+==================================================
+downloaded 3.0 MB
+
+trying URL 'https://cran.microsoft.com/bin/macosx/contrib/4.1/rio_0.5.29.tgz'
+Content type 'application/octet-stream' length 534165 bytes (521 KB)
+==================================================
+downloaded 521 KB
+
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+
+The downloaded binary packages are in
+	/var/folders/st/wcc6sy851d55t40cby3rjldm0000gn/T//Rtmp10FYkY/downloaded_packages
+
+rio installed
+> p_load(psych)
+> p_help(psych)
+Error: failed to load external entity "http://stat.ethz.ch/R-manual/R-patched/library/"
+> p_help(psych, web= F)
+> head(iris)
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
+> describe(iris$Sepal.Length)
+   vars   n mean   sd median trimmed  mad min max range skew kurtosis   se
+X1    1 150 5.84 0.83    5.8    5.81 1.04 4.3 7.9   3.6 0.31    -0.61 0.07
+> describe(iris)
+             vars   n mean   sd median trimmed  mad min max range  skew
+Sepal.Length    1 150 5.84 0.83   5.80    5.81 1.04 4.3 7.9   3.6  0.31
+Sepal.Width     2 150 3.06 0.44   3.00    3.04 0.44 2.0 4.4   2.4  0.31
+Petal.Length    3 150 3.76 1.77   4.35    3.76 1.85 1.0 6.9   5.9 -0.27
+Petal.Width     4 150 1.20 0.76   1.30    1.18 1.04 0.1 2.5   2.4 -0.10
+Species*        5 150 2.00 0.82   2.00    2.00 1.48 1.0 3.0   2.0  0.00
+             kurtosis   se
+Sepal.Length    -0.61 0.07
+Sepal.Width      0.14 0.04
+Petal.Length    -1.42 0.14
+Petal.Width     -1.36 0.06
+Species*        -1.52 0.07
+> #Ejercicio 4
+> hist(iris$Petal.Length)
+> summary(iris$Petal.Length)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.000   1.600   4.350   3.758   5.100   6.900 
+> summary(iris$Species)
+    setosa versicolor  virginica 
+        50         50         50 
+> hist(iris$Petal.Length[iris$Species == "versicolor"], main= "Petal Length: Versicolor")
+> hist(iris$Petal.Length[iris$Species == "virginica"], main= "Petal Length: Virgninica")
+> hist(iris$Petal.Length[iris$Species == "setosa"], main= "Petal Length: Setosa")
+> hist(iris$Petal.Length[iris$Petal.Length < 2], main= "Petal Length: Short Virginica")
+> hist(iris$Petal.Length[iris$Species == "virginica" & iris$Petal.Length < 5.5], main= "Petal Length: Short Virginica")
+> i.setosa <- iris[iris$Species == "setosa", ]
+> head(i.setosa)
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
+> summary(i.setosa$Petal.Length)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.000   1.400   1.500   1.462   1.575   1.900 
+> 
